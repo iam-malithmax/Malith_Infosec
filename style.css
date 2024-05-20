@@ -22,6 +22,8 @@ body, html {
     background: rgba(0, 0, 0, 0.8);
     padding: 10px;
     text-align: center;
+    z-index: 1;
+    position: relative;
 }
 
 .header .logo {
@@ -39,6 +41,8 @@ body, html {
 .section {
     padding: 20px;
     text-align: center;
+    z-index: 1;
+    position: relative;
 }
 
 #home {
