@@ -27,41 +27,12 @@ $(document).ready(function () {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Green text color
-        ctx.fillStyle = '#0f0';
+        // Blue text color
+        ctx.fillStyle = '#00f'; // Blue color for matrix text
         ctx.font = fontSize + 'px Courier';
 
         // Loop through columns
-        for (let i = 0; i < columnsArr.length; i++) {
-            const text = matrixCharsArr[Math.floor(Math.random() * matrixCharsArr.length)];
-            ctx.fillText(text, i * fontSize, columnsArr[i] * fontSize);
+        for (let i = 0
 
-            // Reset column when reaching bottom
-            if (columnsArr[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                columnsArr[i] = 0;
-            }
-
-            // Increment column position
-            columnsArr[i]++;
-        }
-    }
-
-    // Animation loop
-    function animate() {
-        requestAnimationFrame(animate);
-        draw();
-    }
-
-    animate();
-
-    // Initialize Typed.js for the intro text
-    new Typed("#pro-text", {
-        strings: ["Ethical Hacker"],
-        typeSpeed: 100,
-        backSpeed: 100,
-        backDelay: 1000,
-        loop: true
-    });
-});
 
 
