@@ -52,6 +52,7 @@ nav ul li a:hover {
     text-align: center;
     position: relative;
     z-index: 2; /* Ensure it appears above the canvas */
+    margin-top: -50px; /* Move content up */
 }
 
 .hero img:first-child {
@@ -62,6 +63,26 @@ nav ul li a:hover {
 
 .intro {
     margin-bottom: 40px;
+    background-color: rgba(34, 34, 34, 0.7); /* More transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.animated-title {
+    animation: glitch 1.5s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px red;
+    }
+    50% {
+        text-shadow: -2px -2px cyan;
+    }
+    100% {
+        text-shadow: 2px 2px red;
+    }
 }
 
 #matrix-container {
@@ -80,7 +101,7 @@ nav ul li a:hover {
 }
 
 .content-wrapper {
-    padding-top: 80px; /* Adjusted to accommodate the fixed header */
+    padding-top: 50px; /* Adjusted to accommodate the fixed header */
     position: relative;
     z-index: 2; /* Ensure it appears above the canvas */
 }
@@ -120,4 +141,3 @@ footer {
     position: relative;
     z-index: 2; /* Ensure it appears above the canvas */
 }
-
