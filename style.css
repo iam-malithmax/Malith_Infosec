@@ -1,148 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+$(document).ready(function () {
+    // Matrix animation
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
 
-body {
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    color: #fff;
-}
+    // Set canvas dimensions
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    // Create matrix characters
+    const matrixChars = '01';
+    const matrixCharsArr = matrixChars.split('');
 
-header {
-    background-color: rgba(0, 0, 0, 0); /* Transparent background */
-    color: #fff;
-    padding: 20px 0;
-    position: relative;
-    z-index: 2; /* Ensure it appears above the canvas */
-}
+    // Set font and text size
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-.hero {
-    color: #fff;
-    padding: 50px 0;
-    text-align: center;
-    position: relative;
-    z-index: 2; /* Ensure it appears above the canvas */
-    margin-top: -50px; /* Move content up */
-}
-
-.hero img:first-child {
-    width: 200px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.intro {
-    margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
-    padding: 20px;
-    display: inline-block;
-}
-
-.animated-title {
-    font-size: 2.5rem;
-    animation: glitch 1.5s infinite;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-@keyframes glitch {
-    0% {
-        text-shadow: 2px 2px red;
-    }
-    50% {
-        text-shadow: -2px -2px cyan;
-    }
-    100% {
-        text-shadow: 2px 2px red;
-    }
-}
-
-#matrix-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1; /* Ensure it appears below the content */
-}
-
-#matrix-canvas {
-    width: 100%;
-    height: 100%;
-}
-
-.content-wrapper {
-    padding-top: 50px; /* Adjusted to accommodate the fixed header */
-    position: relative;
-    z-index: 2; /* Ensure it appears above the canvas */
-}
-
-section {
-    padding: 50px 0;
-}
-
-section h2 {
-    margin-bottom: 20px;
-}
-
-.project-card {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.project-card img {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
-}
-
-.project-info {
-    max-width: calc(100% - 170px);
-}
-
-.project-info h3 {
-    margin-top: 0;
-}
-
-footer {
-    background-color: rgba(0, 0, 0, 0); /* Transparent background */
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    z-index: 2; /* Ensure it appears above the canvas */
-}
+    // Create columns array
+    const columnsArr = [];
+    for (let i = 0; i < columns; i++) {
+        columnsArr[i]
