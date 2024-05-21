@@ -1,35 +1,45 @@
-window.onload = function() {
-    var c = document.getElementById("matrix");
-    var ctx = c.getContext("2d");
+const canvas = document.getElementById('matrix');
+const context = canvas.getContext('2d');
 
-    c.height = window.innerHeight;
-    c.width = window.innerWidth;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-    var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
-    matrix = matrix.split("");
+const katakana = 'アカサタナハマヤラワガザダバパイキシチニヒミリウクスツヌフムユルグズヅブプエケセテネヘメレヱヲオコソトノホモヨロヮンヴヵヶ';
+const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const nums = '0123456789';
 
-    var font_size = 10;
-    var columns = c.width / font_size;
-    var drops = [];
-    for (var x = 0; x < columns; x++)
-        drops[x] = 1;
+const alphabet = katakana + latin + nums;
 
-    function draw() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-        ctx.fillRect(0, 0, c.width, c.height);
+const fontSize = 16;
+const columns = canvas.width / fontSize;
 
-        ctx.fillStyle = "#0F0";
-        ctx.font = font_size + "px arial";
-        for (var i = 0; i < drops.length; i++) {
-            var text = matrix[Math.floor(Math.random() * matrix.length)];
-            ctx.fillText(text, i * font_size, drops[i] * font_size);
+const rainDrops = [];
 
-            if (drops[i] * font_size > c.height && Math.random() > 0.975)
-                drops[i] = 0;
+for (let x = 0; x < columns; x++) {
+    rainDrops[x] = 1;
+}
 
-            drops[i]++;
+const draw = () => {
+    context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    context.fillStyle = '#0F0';
+    context.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            rainDrops[i] = 0;
         }
+        rainDrops[i]++;
     }
-
-    setInterval(draw, 35);
 };
+
+setInterval(draw, 30);
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
