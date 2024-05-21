@@ -18,21 +18,6 @@ $(document).ready(function () {
     // Create columns array
     const columnsArr = [];
     for (let i = 0; i < columns; i++) {
-        columnsArr[i] = 1;
-    }
-
-    // Draw function
-    function draw() {
-        // Black background with opacity
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // Blue text color
-        ctx.fillStyle = '#00f'; // Blue color for matrix text
-        ctx.font = fontSize + 'px Courier';
-
-        // Loop through columns
-        for (let i = 0
-
+        columnsArr[i]
 
 
