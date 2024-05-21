@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    color: #fff; /* Ensure text color is white */
+    color: #fff;
 }
 
 .container {
@@ -47,7 +47,6 @@ nav ul li a:hover {
 }
 
 .hero {
-    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
     color: #fff;
     padding: 100px 0;
     text-align: center;
