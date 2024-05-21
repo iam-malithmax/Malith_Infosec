@@ -7,17 +7,14 @@ $(document).ready(function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Create matrix characters
-    const matrixChars = '01';
-    const matrixCharsArr = matrixChars.split('');
+    // Matrix characters
+    const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const matrixCharsArray = matrixChars.split("");
 
-    // Set font and text size
+    // Set font size
     const fontSize = 16;
     const columns = canvas.width / fontSize;
 
     // Create columns array
-    const columnsArr = [];
-    for (let i = 0; i < columns; i++) {
-        columnsArr[i]
-
+    const drops =
 
